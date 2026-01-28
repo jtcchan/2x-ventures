@@ -1,29 +1,31 @@
 'use client'
 
+import Image from 'next/image'
+
 const portfolioItems = [
   {
     id: 1,
     name: 'Brushbox',
     description: 'Oral care subscription service',
-    icon: '🪥',
+    logo: '/brushbox-logo.png',
   },
   {
     id: 2,
     name: 'Neverquit Apparel',
     description: 'Padded socks for work & travel',
-    icon: '🧦',
+    logo: '/neverquit-logo.png',
   },
   {
     id: 3,
     name: 'Goodbits',
     description: 'Newsletter curator & editor',
-    icon: '📰',
+    logo: '/goodbits-logo.png',
   },
   {
     id: 4,
     name: 'Dayboard',
     description: 'Daily task management app',
-    icon: '📋',
+    logo: '/dayboard-logo.png',
   },
 ]
 
@@ -41,7 +43,15 @@ export default function Portfolio() {
               key={item.id}
               className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="text-4xl mb-4">{item.icon}</div>
+              <div className="mb-4 h-12 relative">
+                <Image
+                  src={item.logo}
+                  alt={item.name}
+                  width={120}
+                  height={48}
+                  className="h-full w-auto"
+                />
+              </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 {item.name}
               </h3>
