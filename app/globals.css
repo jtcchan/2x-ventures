@@ -1,3 +1,4 @@
+@source '../components' '../app';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
