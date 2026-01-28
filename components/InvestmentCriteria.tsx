@@ -10,7 +10,7 @@ const criteria = [
 
 export default function InvestmentCriteria() {
   return (
-    <section id="criteria" className="py-20 sm:py-32 bg-white px-4 sm:px-6 lg:px-8">
+    <section id="criteria" className="py-16 sm:py-24 lg:py-32 bg-white px-4 sm:px-6 lg:px-8 border-b border-gray-200">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 sm:mb-20">
           <p className="inline-block text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-4 py-2 rounded-full mb-6">
@@ -24,16 +24,19 @@ export default function InvestmentCriteria() {
           </p>
         </div>
         
-        <div className="space-y-4 sm:space-y-5">
+        <div className="space-y-6 sm:space-y-8 max-w-3xl mx-auto">
           {criteria.map((item, index) => (
             <div
               key={index}
-              className="flex items-start gap-4 text-lg text-gray-700 leading-relaxed"
+              className="flex items-start gap-4 text-lg text-gray-700 leading-relaxed group p-4 rounded-lg transition-all duration-300 hover:bg-blue-50"
+              style={{
+                paddingLeft: '20px',
+              }}
             >
-              <span className="text-blue-600 font-bold flex-shrink-0 pt-0">
+              <span className="text-blue-600 font-bold flex-shrink-0 text-xl pt-1">
                 ➤
               </span>
-              <span>{item}</span>
+              <span className="group-hover:text-blue-600 transition-colors">{item}</span>
             </div>
           ))}
         </div>
