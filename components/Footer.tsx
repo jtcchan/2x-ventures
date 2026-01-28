@@ -1,0 +1,34 @@
+'use client'
+
+export default function Footer() {
+  return (
+    <footer className="bg-gray-900 text-white py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h3 className="text-xl font-bold mb-4">2x Ventures</h3>
+            <p className="text-gray-300">We buy and grow high potential brands</p>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2 text-gray-300">
+              <li><a href="#portfolio" className="hover:text-white transition">Portfolio</a></li>
+              <li><a href="#criteria" className="hover:text-white transition">Criteria</a></li>
+              <li><a href="#how-it-works" className="hover:text-white transition">How It Works</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4">Contact</h4>
+            <p className="text-gray-300">Interested in learning more?</p>
+            <a href="/apply" className="inline-block mt-2 px-4 py-2 bg-white text-gray-900 rounded hover:bg-gray-100 transition">
+              Apply Now
+            </a>
+          </div>
+        </div>
+        <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
+          <p>&copy; {new Date().getFullYear()} 2x Ventures. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  )
+}
