@@ -1,7 +1,4 @@
-@source '../components' '../app';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 * {
   margin: 0;
