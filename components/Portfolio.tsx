@@ -31,60 +31,60 @@ const portfolioItems = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-50 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 sm:mb-20">
-          <p className="inline-block text-xs font-bold uppercase tracking-widest text-white bg-blue-600 px-4 py-2 rounded-full mb-4">
-            Our portfolio
+    <section id="portfolio" className="py-16 sm:py-20 lg:py-24 bg-white px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-10 sm:mb-12">
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-gray-400 mb-2">
+            OUR PORTFOLIO
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
-            Growing incredible brands
-          </h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
-          {portfolioItems.map((item) => (
-            <div
-              key={item.id}
-              className="group bg-white rounded-xl transition-all duration-300 hover:scale-105"
-              style={{
-                backgroundColor: '#ffffff',
-                borderWidth: '2px',
-                borderColor: '#ccc',
-                borderRadius: '16px',
-                padding: '32px',
-                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.06)',
-                cursor: 'pointer',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#0066FF';
-                e.currentTarget.style.boxShadow = '0 20px 48px rgba(0, 102, 255, 0.25), 0 2px 4px rgba(0, 0, 0, 0.08)';
-                e.currentTarget.style.transform = 'translateY(-8px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#ccc';
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.06)';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
-            >
-              <div className="mb-6 h-12 flex items-start">
+        {/* Top row - 3 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-10 mb-10">
+          {portfolioItems.slice(0, 3).map((item) => (
+            <div key={item.id} className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center overflow-hidden">
                 <Image
                   src={item.logo}
                   alt={item.name}
-                  width={120}
+                  width={48}
                   height={48}
-                  className="h-full w-auto object-contain"
-                  priority
+                  className="w-10 h-10 object-contain"
                 />
               </div>
-              <h3 className="text-2xl sm:text-2xl font-bold text-black mb-3">
-                {item.name}
-              </h3>
-              <p className="text-base text-gray-600 leading-relaxed">
-                {item.description}
-              </p>
+              <div>
+                <h3 className="text-base font-medium text-gray-700 mb-1">
+                  {item.name}
+                </h3>
+                <p className="text-sm text-gray-400">
+                  {item.description}
+                </p>
+              </div>
             </div>
           ))}
+        </div>
+        
+        {/* Bottom row - 1 item, left aligned */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-8">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center overflow-hidden">
+              <Image
+                src={portfolioItems[3].logo}
+                alt={portfolioItems[3].name}
+                width={48}
+                height={48}
+                className="w-10 h-10 object-contain"
+              />
+            </div>
+            <div>
+              <h3 className="text-base font-medium text-gray-700 mb-1">
+                {portfolioItems[3].name}
+              </h3>
+              <p className="text-sm text-gray-400">
+                {portfolioItems[3].description}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

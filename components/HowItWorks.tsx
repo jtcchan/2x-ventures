@@ -3,67 +3,49 @@
 const options = [
   {
     id: 1,
-    title: 'Full Acquisition',
+    title: 'Full acquisition',
     description: 'We take over operations with our team of experienced founders.',
-    badge: 'Option 1: full acquisition',
+    badge: 'OPTION 1: FULL ACQUISITION',
   },
   {
     id: 2,
     title: 'Partnership',
     description: 'We join as operating partners and work alongside you and your team.',
-    badge: 'Option 2: partnership',
+    badge: 'OPTION 2: PARTNERSHIP',
   },
 ]
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-16 sm:py-24 lg:py-32 bg-gray-50 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16 sm:mb-20">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-8 leading-tight">
+    <section id="how-it-works" className="py-16 sm:py-20 lg:py-28 bg-white px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-10 sm:mb-14">
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-[var(--font-dm-serif)] italic text-gray-900 leading-tight mb-5">
             How it works
           </h2>
-          <p className="text-lg text-gray-700">
+          <p className="text-base text-gray-500 max-w-xl mx-auto">
             We are flexible and can do majority acquisition, but are open to founding teams staying on.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {options.map((option) => (
             <div
               key={option.id}
-              className="group bg-white rounded-xl transition-all duration-300"
-              style={{
-                backgroundColor: '#ffffff',
-                borderWidth: '2px',
-                borderColor: '#ccc',
-                borderRadius: '16px',
-                padding: '32px',
-                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.06)',
-                cursor: 'pointer',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#0066FF';
-                e.currentTarget.style.boxShadow = '0 20px 48px rgba(0, 102, 255, 0.25), 0 2px 4px rgba(0, 0, 0, 0.08)';
-                e.currentTarget.style.transform = 'translateY(-8px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#ccc';
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.06)';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
+              className="bg-white rounded-lg border border-gray-200 overflow-hidden"
             >
-              <span className="inline-block text-xs font-bold uppercase tracking-widest text-gray-700 bg-gray-100 px-3 py-2 rounded mb-6">
-                {option.badge}
-              </span>
+              {/* Teal accent bar at top */}
+              <div className="h-1.5 bg-gradient-to-r from-[#5BBFBA] to-[#4A9DAF]" />
               
-              <h3 className="text-2xl sm:text-3xl font-bold text-black mb-4">
-                {option.title}
-              </h3>
-              
-              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                {option.description}
-              </p>
+              <div className="p-6 sm:p-8">
+                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-gray-400 mb-4">
+                  {option.badge}
+                </p>
+                
+                <p className="text-base text-gray-500 leading-relaxed">
+                  {option.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

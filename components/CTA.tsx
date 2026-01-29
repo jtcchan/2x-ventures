@@ -4,46 +4,35 @@ import Link from 'next/link'
 
 export default function CTA() {
   return (
-    <section className="py-16 sm:py-24 lg:py-32 bg-black text-white px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="max-w-3xl mx-auto text-center relative z-10">
-        <p className="inline-block text-xs font-bold uppercase tracking-widest text-blue-300 bg-blue-950 px-4 py-2 rounded-full mb-8">
-          Next Steps
-        </p>
-        
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-10 leading-tight">
-          Interested to learn more?
-        </h2>
-        
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-          <Link
-            href="/apply"
-            className="text-black text-base font-semibold transition-all duration-300 inline-block"
-            style={{
-              backgroundColor: '#ffffff',
-              padding: '12px 32px',
-              borderRadius: '12px',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#f0f0f0';
-              e.currentTarget.style.boxShadow = '0 8px 24px rgba(255, 255, 255, 0.2)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#ffffff';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
-            }}
-          >
-            Apply to invest
-          </Link>
-          <a
-            href="mailto:hello@2xcd.com?subject=2x%20Ventures%20General%20Inquiry"
-            className="text-gray-300 hover:text-white text-base transition-colors duration-300 font-medium"
-          >
-            General inquiry?{' '}
-            <span className="underline">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-[#F5F6F8] rounded-2xl py-14 sm:py-18 lg:py-20 px-6 sm:px-10 lg:px-16 text-center">
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-gray-400 mb-4">
+            NEXT STEPS
+          </p>
+          
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-[var(--font-dm-serif)] italic text-gray-900 leading-tight mb-8 sm:mb-10">
+            Interested to learn more?
+          </h2>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Link
+              href="/apply"
+              className="inline-block px-8 py-4 text-sm font-medium uppercase tracking-[0.15em] text-white bg-[#5BBFBA] hover:bg-[#4AA9A4] rounded-md transition-colors duration-300"
+            >
+              APPLY TO INVEST
+            </Link>
+          </div>
+          
+          <p className="text-sm text-gray-500 mt-8">
+            Have a general inquiry? Reach out to{' '}
+            <a 
+              href="mailto:hello@2xcd.com" 
+              className="text-gray-700 underline underline-offset-2 hover:text-gray-900 transition-colors"
+            >
               hello@2xcd.com
-            </span>
-          </a>
+            </a>
+          </p>
         </div>
       </div>
     </section>
