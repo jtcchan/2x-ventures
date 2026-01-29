@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#3D4852] text-white px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-8">
           {/* Logo */}
           <div>
             <Link href="/">
@@ -41,30 +41,6 @@ export default function Footer() {
                 <a href="https://2xcd.com" target="_blank" rel="noopener noreferrer" className="text-[#5BBFBA] hover:text-[#76d6d1] transition-colors duration-300">
                   Our Agency
                 </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70 mb-5">
-              RESOURCES
-            </h4>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <a href="#" className="text-[#5BBFBA] hover:text-[#76d6d1] transition-colors duration-300">
-                  Growth Talks
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-[#5BBFBA] hover:text-[#76d6d1] transition-colors duration-300">
-                  CRO Guide
-                </a>
-              </li>
-              <li>
-                <span className="text-white/40">
-                  Growth Marketing Blog
-                </span>
               </li>
             </ul>
           </div>
