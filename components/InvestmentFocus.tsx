@@ -2,8 +2,8 @@
 
 export default function InvestmentFocus() {
   return (
-    <section className="py-20 sm:py-28 lg:py-36 bg-white mx-[30px]">
-      <div className="max-w-[940px] mx-auto px-4">
+    <section className="py-20 sm:py-28 lg:py-36 bg-white">
+      <div className="max-w-[940px] mx-auto px-[30px] sm:px-[50px]">
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-xs font-medium uppercase tracking-[0.25em] text-gray-400 mb-4">
             OUR INVESTMENT FOCUS

@@ -31,8 +31,8 @@ const portfolioItems = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-16 sm:py-20 lg:py-24 bg-white mx-[30px]">
-      <div className="max-w-[940px] mx-auto px-4">
+    <section id="portfolio" className="py-16 sm:py-20 lg:py-24 bg-white">
+      <div className="max-w-[940px] mx-auto px-[30px] sm:px-[50px]">
         <div className="text-center mb-10 sm:mb-12">
           <p className="text-xs font-medium uppercase tracking-[0.25em] text-gray-400 mb-2">
             OUR PORTFOLIO

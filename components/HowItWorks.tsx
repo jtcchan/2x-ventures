@@ -17,8 +17,8 @@ const options = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-16 sm:py-20 lg:py-28 bg-white mx-[30px]">
-      <div className="max-w-[940px] mx-auto px-4">
+    <section id="how-it-works" className="py-16 sm:py-20 lg:py-28 bg-white">
+      <div className="max-w-[940px] mx-auto px-[30px] sm:px-[50px]">
         <div className="text-center mb-10 sm:mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-[var(--font-dm-serif)] italic text-gray-900 leading-tight mb-5">
             How it works

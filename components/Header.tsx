@@ -24,14 +24,14 @@ export default function Header() {
 
   return (
     <header className={headerClasses}>
-      <nav className="mx-auto px-[30px] sm:px-[50px] py-[30px] flex items-center justify-between">
+      <nav className="max-w-[940px] mx-auto px-[30px] sm:px-[50px] py-[30px] flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity duration-300">
           <Image
-            src={isHomepage ? "/2x-logo.png" : "/2x-logo-alt.png"}
+            src={isHomepage ? "/2x-logo-white.png" : "/2x-logo-alt.png"}
             alt="2x Micro Ventures"
             width={180}
             height={48}
-            className={`h-10 sm:h-12 w-auto ${isHomepage ? 'brightness-0 invert' : ''}`}
+            className="h-10 sm:h-12 w-auto"
             priority
           />
         </Link>

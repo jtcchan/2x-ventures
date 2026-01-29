@@ -5,18 +5,18 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#424448] text-white px-[30px] sm:px-[50px] pt-[70px] pb-[30px]">
-      <div className="max-w-[940px] mx-auto">
+    <footer className="bg-[#424448] text-white pt-[70px] pb-[30px]">
+      <div className="max-w-[940px] mx-auto px-[30px] sm:px-[50px]">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-8">
           {/* Logo */}
           <div>
             <Link href="/">
               <Image
-                src="/2x-mark.png"
+                src="/2x-mark-white.png"
                 alt="2x Ventures"
                 width={60}
                 height={60}
-                className="h-14 w-auto brightness-0 invert"
+                className="h-14 w-auto"
               />
             </Link>
           </div>
