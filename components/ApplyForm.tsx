@@ -1,10 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-
 export default function ApplyForm() {
-  const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')
 
@@ -13,14 +10,21 @@ export default function ApplyForm() {
     setIsSubmitting(true)
     setError('')
 
-    // For now, simulate form submission and redirect
-    // In production, this would POST to a backend or form service
     try {
-      // Simulate network delay
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
-      // Redirect to success page
-      router.push('/submission-successful')
+      const formData = new FormData(e.currentTarget)
+      const messageLines = [
+        `Full Name: ${formData.get('name') || ''}`,
+        `Email Address: ${formData.get('email') || ''}`,
+        `Investment Preference: ${formData.get('investment-preference') || ''}`,
+        `Minimum Investment: ${formData.get('min-investment') || ''}`,
+        `Maximum Investment: ${formData.get('max-investment') || ''}`,
+        `Investment Experience: ${formData.get('experience') || ''}`,
+      ]
+      const subject = encodeURIComponent('2x Ventures Investment Application')
+      const body = encodeURIComponent(messageLines.join('\n'))
+
+      window.location.href = `mailto:hello@2xcd.com?subject=${subject}&body=${body}`
+      setIsSubmitting(false)
     } catch {
       setError('Something went wrong. Please try again.')
       setIsSubmitting(false)
