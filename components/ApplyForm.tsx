@@ -1,217 +1,162 @@
 'use client'
 
-import { FormEvent, useState } from 'react'
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function ApplyForm() {
-  const [loading, setLoading] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
+  const router = useRouter()
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setLoading(true)
+    setIsSubmitting(true)
+    setError('')
 
-    const formData = new FormData(e.currentTarget)
-    
+    // For now, simulate form submission and redirect
+    // In production, this would POST to a backend or form service
     try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString(),
-      })
-
-      if (response.ok) {
-        setSubmitted(true)
-        ;(e.target as HTMLFormElement).reset()
-      }
-    } catch (error) {
-      console.error('Form submission error:', error)
-    } finally {
-      setLoading(false)
+      // Simulate network delay
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      
+      // Redirect to success page
+      router.push('/submission-successful')
+    } catch {
+      setError('Something went wrong. Please try again.')
+      setIsSubmitting(false)
     }
   }
 
-  if (submitted) {
-    return (
-      <div className="text-center py-16 sm:py-20">
-        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-50 mb-6">
-          <div className="text-5xl text-green-600">✓</div>
-        </div>
-        <h2 className="text-2xl sm:text-3xl font-bold text-black mb-3">
-          Thank you for your application!
-        </h2>
-        <p className="text-base sm:text-lg text-gray-700 mb-8 max-w-md mx-auto leading-relaxed">
-          We'll review your application and get back to you within 5-7 business days. We look forward to exploring a potential partnership!
-        </p>
-        <a
-          href="/"
-          className="inline-flex items-center justify-center px-6 py-3 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition-all duration-300"
-        >
-          Back to Home
-        </a>
-      </div>
-    )
-  }
-
   return (
-    <form
-      name="apply"
-      method="POST"
-      netlify-honeypot="bot-field"
-      onSubmit={handleSubmit}
-      className="space-y-7 sm:space-y-8"
-    >
-      {/* Netlify honeypot field */}
-      <input type="hidden" name="bot-field" />
-      <input type="hidden" name="form-name" value="apply" />
-
+    <form onSubmit={handleSubmit} className="space-y-6">
       {/* Full Name */}
       <div>
-        <label htmlFor="fullName" className="block text-sm font-semibold text-black mb-3">
-          Full Name <span className="text-red-500">*</span>
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+          Full Name
         </label>
         <input
           type="text"
-          id="fullName"
-          name="fullName"
+          id="name"
+          name="name"
+          placeholder="e.g. Sarah Smith"
           required
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-300"
-          placeholder="John Doe"
+          autoFocus
+          className="w-full px-4 py-3 text-base border border-gray-300 rounded-md focus:ring-2 focus:ring-[#5BBFBA]/30 focus:border-[#5BBFBA] transition-colors duration-200 placeholder:text-gray-400"
         />
       </div>
 
-      {/* Email */}
+      {/* Email Address */}
       <div>
-        <label htmlFor="email" className="block text-sm font-semibold text-black mb-3">
-          Email Address <span className="text-red-500">*</span>
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+          Email Address
         </label>
         <input
           type="email"
           id="email"
           name="email"
+          placeholder="e.g. name@company.com"
           required
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-300"
-          placeholder="john@company.com"
+          className="w-full px-4 py-3 text-base border border-gray-300 rounded-md focus:ring-2 focus:ring-[#5BBFBA]/30 focus:border-[#5BBFBA] transition-colors duration-200 placeholder:text-gray-400"
         />
       </div>
 
       {/* Investment Preference */}
       <div>
-        <label className="block text-sm font-semibold text-black mb-4">
-          Investment Preference <span className="text-red-500">*</span>
+        <label className="block text-sm font-medium text-gray-700 mb-3">
+          Investment Preference
         </label>
-        <div className="space-y-3">
-          {['Full Acquisition', 'Partnership', 'Not Sure'].map((option) => (
-            <div key={option} className="flex items-center p-3 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 cursor-pointer transition-all duration-300">
-              <input
-                type="radio"
-                id={option.replace(/\s/g, '')}
-                name="investmentPreference"
-                value={option}
-                required
-                className="h-5 w-5 text-blue-600 border-gray-300 focus:ring-blue-500"
-              />
-              <label htmlFor={option.replace(/\s/g, '')} className="ml-3 text-sm font-medium text-gray-900 cursor-pointer flex-1">
-                {option}
-              </label>
-            </div>
-          ))}
+        <div className="flex flex-wrap gap-4 sm:gap-6">
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="radio"
+              name="investment-preference"
+              value="no-preference"
+              defaultChecked
+              className="w-4 h-4 text-[#5BBFBA] border-gray-300 focus:ring-[#5BBFBA]"
+            />
+            <span className="text-sm text-gray-600">No Preference</span>
+          </label>
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="radio"
+              name="investment-preference"
+              value="debt"
+              className="w-4 h-4 text-[#5BBFBA] border-gray-300 focus:ring-[#5BBFBA]"
+            />
+            <span className="text-sm text-gray-600">Debt</span>
+          </label>
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="radio"
+              name="investment-preference"
+              value="equity"
+              className="w-4 h-4 text-[#5BBFBA] border-gray-300 focus:ring-[#5BBFBA]"
+            />
+            <span className="text-sm text-gray-600">Equity</span>
+          </label>
         </div>
       </div>
 
-      {/* Investment Amounts */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div>
-          <label htmlFor="minInvestment" className="block text-sm font-semibold text-black mb-3">
-            Minimum Investment ($) <span className="text-red-500">*</span>
-          </label>
-          <div className="relative">
-            <span className="absolute left-4 top-3.5 text-gray-500">$</span>
-            <input
-              type="number"
-              id="minInvestment"
-              name="minInvestment"
-              required
-              min="0"
-              step="1000"
-              className="w-full pl-8 pr-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-300"
-              placeholder="50,000"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label htmlFor="maxInvestment" className="block text-sm font-semibold text-black mb-3">
-            Maximum Investment ($) <span className="text-red-500">*</span>
-          </label>
-          <div className="relative">
-            <span className="absolute left-4 top-3.5 text-gray-500">$</span>
-            <input
-              type="number"
-              id="maxInvestment"
-              name="maxInvestment"
-              required
-              min="0"
-              step="1000"
-              className="w-full pl-8 pr-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-300"
-              placeholder="500,000"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Experience */}
+      {/* Minimum Investment */}
       <div>
-        <label htmlFor="experience" className="block text-sm font-semibold text-black mb-3">
-          Your Experience <span className="text-red-500">*</span>
+        <label htmlFor="min-investment" className="block text-sm font-medium text-gray-700 mb-2">
+          Minimum Investment
         </label>
-        <p className="text-xs text-gray-600 mb-2">Tell us about your experience with e-commerce, SaaS, or direct-to-consumer businesses.</p>
+        <input
+          type="text"
+          id="min-investment"
+          name="min-investment"
+          placeholder="e.g. $25,000 USD"
+          required
+          className="w-full px-4 py-3 text-base border border-gray-300 rounded-md focus:ring-2 focus:ring-[#5BBFBA]/30 focus:border-[#5BBFBA] transition-colors duration-200 placeholder:text-gray-400"
+        />
+      </div>
+
+      {/* Maximum Investment */}
+      <div>
+        <label htmlFor="max-investment" className="block text-sm font-medium text-gray-700 mb-2">
+          Maximum Investment
+        </label>
+        <input
+          type="text"
+          id="max-investment"
+          name="max-investment"
+          placeholder="e.g. $100,000 USD"
+          required
+          className="w-full px-4 py-3 text-base border border-gray-300 rounded-md focus:ring-2 focus:ring-[#5BBFBA]/30 focus:border-[#5BBFBA] transition-colors duration-200 placeholder:text-gray-400"
+        />
+      </div>
+
+      {/* Investment Experience */}
+      <div>
+        <label htmlFor="experience" className="block text-sm font-medium text-gray-700 mb-2">
+          Investment Experience
+        </label>
         <textarea
           id="experience"
           name="experience"
+          rows={5}
+          placeholder="Tell us about your background in investing."
           required
-          rows={4}
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-300 resize-none"
-          placeholder="Describe your background and experience with consumer businesses..."
+          className="w-full px-4 py-3 text-base border border-gray-300 rounded-md focus:ring-2 focus:ring-[#5BBFBA]/30 focus:border-[#5BBFBA] transition-colors duration-200 placeholder:text-gray-400 resize-none"
         />
       </div>
 
-      {/* Additional Message */}
-      <div>
-        <label htmlFor="message" className="block text-sm font-semibold text-black mb-3">
-          Additional Information
-        </label>
-        <p className="text-xs text-gray-600 mb-2">Optional: Anything else you'd like to share about your business or investment goals.</p>
-        <textarea
-          id="message"
-          name="message"
-          rows={3}
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all duration-300 resize-none"
-          placeholder="Tell us more about your vision..."
-        />
-      </div>
+      {/* Error Message */}
+      {error && (
+        <div className="bg-red-50 text-red-600 px-4 py-3 rounded-md text-sm">
+          {error}
+        </div>
+      )}
 
       {/* Submit Button */}
       <button
         type="submit"
-        disabled={loading}
-        className="w-full px-6 py-4 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-center gap-2"
+        disabled={isSubmitting}
+        className="w-full px-6 py-4 text-sm font-medium uppercase tracking-[0.1em] text-white bg-[#5BBFBA] hover:bg-[#4AA9A4] disabled:bg-gray-400 disabled:cursor-not-allowed rounded-md transition-colors duration-300"
       >
-        {loading ? (
-          <>
-            <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-            Submitting...
-          </>
-        ) : (
-          'Submit Application'
-        )}
+        {isSubmitting ? 'Please wait...' : 'Submit application'}
       </button>
-
-      <p className="text-xs text-gray-600 text-center">
-        <span className="text-red-500">*</span> Required fields. We'll review your application and respond within 5-7 business days.
-      </p>
     </form>
   )
 }
