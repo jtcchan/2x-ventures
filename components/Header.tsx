@@ -1,41 +1,32 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/50">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        <Link href="/" className="h-8 relative flex items-center hover:opacity-80 transition-opacity duration-300">
-          <Image
-            src="/2x-logo.png"
-            alt="2x Ventures"
-            width={100}
-            height={32}
-            className="h-full w-auto object-contain"
-            priority
-          />
+    <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity duration-300">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-teal-400 via-cyan-500 to-blue-600 text-white text-lg font-bold">
+            2
+          </span>
+          <span className="text-white text-sm sm:text-base font-semibold tracking-[0.2em]">
+            x MICRO VENTURES
+          </span>
         </Link>
-        
-        <div className="flex items-center gap-3 sm:gap-4">
+
+        <div className="flex items-center gap-3 sm:gap-5">
           <a
-            href="#portfolio"
-            className="hidden sm:inline-flex px-4 py-2 text-gray-700 text-sm font-medium hover:text-black transition-colors duration-300"
+            href="#about"
+            className="text-white text-xs sm:text-sm font-semibold tracking-[0.12em] hover:opacity-80 transition-opacity duration-300"
           >
-            Portfolio
-          </a>
-          <a
-            href="#criteria"
-            className="hidden sm:inline-flex px-4 py-2 text-gray-700 text-sm font-medium hover:text-black transition-colors duration-300"
-          >
-            Criteria
+            ABOUT US
           </a>
           <Link
             href="/apply"
-            className="px-6 py-2 bg-black text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition-all duration-300 shadow-sm hover:shadow-md"
+            className="px-4 sm:px-5 py-2 text-xs sm:text-sm font-semibold tracking-[0.14em] text-white border border-white/90 rounded-full hover:bg-white/10 transition-all duration-300"
           >
-            Apply
+            APPLY NOW
           </Link>
         </div>
       </nav>
