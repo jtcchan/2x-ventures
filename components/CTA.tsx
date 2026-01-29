@@ -4,9 +4,9 @@ import Link from 'next/link'
 
 export default function CTA() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-[#F5F6F8] rounded-2xl py-14 sm:py-18 lg:py-20 px-6 sm:px-10 lg:px-16 text-center">
+    <section className="py-16 sm:py-20 lg:py-24 mx-[30px]">
+      <div className="max-w-[940px] mx-auto">
+        <div className="bg-[#F5F6F8] rounded-[10px] py-14 sm:py-18 lg:py-20 px-[40px] sm:px-[60px] lg:px-[80px] text-center">
           <p className="text-xs font-medium uppercase tracking-[0.25em] text-gray-400 mb-4">
             NEXT STEPS
           </p>

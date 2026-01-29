@@ -31,8 +31,8 @@ const portfolioItems = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-16 sm:py-20 lg:py-24 bg-white px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto">
+    <section id="portfolio" className="py-16 sm:py-20 lg:py-24 bg-white mx-[30px]">
+      <div className="max-w-[940px] mx-auto px-4">
         <div className="text-center mb-10 sm:mb-12">
           <p className="text-xs font-medium uppercase tracking-[0.25em] text-gray-400 mb-2">
             OUR PORTFOLIO
@@ -64,7 +64,7 @@ export default function Portfolio() {
           ))}
         </div>
         
-        {/* Bottom row - 1 item, left aligned */}
+        {/* Bottom row - 1 item, left aligned to match original */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-8">
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center overflow-hidden">

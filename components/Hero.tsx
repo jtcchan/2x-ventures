@@ -2,8 +2,8 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 py-24 sm:py-32 md:py-36 text-white" style={{ background: 'linear-gradient(165deg, #6BC5D2 0%, #5BBFBA 25%, #4A9DAF 50%, #4A90A4 75%, #3D7A94 100%)' }}>
-      <div className="max-w-4xl mx-auto text-center w-full">
+    <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 py-[80px] text-white" style={{ background: 'linear-gradient(165deg, #6BC5D2 0%, #5BBFBA 25%, #4A9DAF 50%, #4A90A4 75%, #3D7A94 100%)' }}>
+      <div className="w-[70%] max-w-[1140px] mx-auto text-center">
         <p className="text-[11px] sm:text-xs tracking-[0.32em] uppercase font-medium text-white/85 mb-5 sm:mb-6">
           MICRO PRIVATE EQUITY FOR DTC ECOMMERCE AND SAAS
         </p>
