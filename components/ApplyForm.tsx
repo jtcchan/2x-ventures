@@ -1,9 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 export default function ApplyForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')
+  const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -12,27 +14,56 @@ export default function ApplyForm() {
 
     try {
       const formData = new FormData(e.currentTarget)
-      const messageLines = [
-        `Full Name: ${formData.get('name') || ''}`,
-        `Email Address: ${formData.get('email') || ''}`,
-        `Investment Preference: ${formData.get('investment-preference') || ''}`,
-        `Minimum Investment: ${formData.get('min-investment') || ''}`,
-        `Maximum Investment: ${formData.get('max-investment') || ''}`,
-        `Investment Experience: ${formData.get('experience') || ''}`,
-      ]
-      const subject = encodeURIComponent('2x Ventures Investment Application')
-      const body = encodeURIComponent(messageLines.join('\n'))
+      const company = String(formData.get('company') || '')
+      const payload = {
+        name: formData.get('name') || '',
+        email: formData.get('email') || '',
+        investmentPreference: formData.get('investment-preference') || '',
+        minInvestment: formData.get('min-investment') || '',
+        maxInvestment: formData.get('max-investment') || '',
+        experience: formData.get('experience') || '',
+        company,
+      }
 
-      window.location.href = `mailto:hello@2xcd.com?subject=${subject}&body=${body}`
-      setIsSubmitting(false)
-    } catch {
-      setError('Something went wrong. Please try again.')
+      const response = await fetch('/api/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+
+      let result: { success?: boolean; error?: string } | null = null
+      try {
+        result = await response.json()
+      } catch {
+        result = null
+      }
+
+      if (!response.ok || !result?.success) {
+        throw new Error(result?.error || 'Submission failed')
+      }
+
+      router.push('/submission-successful')
+    } catch (err) {
+      setError(err instanceof Error && err.message ? err.message : 'Something went wrong. Please try again.')
+    } finally {
       setIsSubmitting(false)
     }
   }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Honeypot field */}
+      <div className="absolute left-[-10000px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
+        <label htmlFor="company">Company</label>
+        <input
+          type="text"
+          id="company"
+          name="company"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       {/* Full Name */}
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">

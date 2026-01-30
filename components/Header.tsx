@@ -12,42 +12,42 @@ export default function Header() {
   // On other pages: solid white background with dark logo/text
   const headerClasses = isHomepage
     ? 'absolute top-0 left-0 right-0 z-50 bg-transparent'
-    : 'sticky top-0 z-50 bg-white border-b border-gray-100'
+    : 'sticky top-0 z-50 bg-white'
   
   const textClasses = isHomepage
-    ? 'text-white'
-    : 'text-gray-700'
+    ? 'text-white opacity-60 hover:opacity-90'
+    : 'text-[#1a1b1f] opacity-60 hover:opacity-90'
   
   const buttonClasses = isHomepage
-    ? 'text-white border-white/80 hover:bg-white/10'
-    : 'text-white bg-[#5BBFBA] border-[#5BBFBA] hover:bg-[#4AA9A4]'
+    ? 'text-white opacity-80 bg-transparent border-2 border-white hover:bg-white/10'
+    : 'text-white bg-[#68b0cc] border-2 border-[#68b0cc] hover:bg-[#32343a]'
 
   return (
     <header className={headerClasses}>
-      <nav className="px-[30px] sm:px-[50px] lg:px-[80px] py-[30px] flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity duration-300">
+      <nav className="px-[20px] sm:px-[50px] py-[20px] pb-[10px] flex items-center justify-between">
+        <Link href="/" className="h-[60px] flex items-center hover:opacity-80 transition-opacity duration-300">
           <Image
             src={isHomepage ? "/2x-logo-white.png" : "/2x-logo-alt.png"}
             alt="2x Micro Ventures"
             width={180}
-            height={48}
-            className="h-10 sm:h-12 w-auto"
+            height={60}
+            className="h-full w-auto object-contain object-left"
             priority
           />
         </Link>
 
-        <div className="flex items-center gap-4 sm:gap-6">
+        <div className="flex items-center gap-[16px]">
           <Link
             href="/about"
-            className={`text-xs sm:text-sm font-medium tracking-[0.14em] hover:opacity-80 transition-opacity duration-300 ${textClasses}`}
+            className={`text-xs font-medium tracking-[0.08em] uppercase py-[9px] transition-opacity duration-200 ${textClasses}`}
           >
-            ABOUT US
+            About Us
           </Link>
           <Link
             href="/apply"
-            className={`px-4 sm:px-5 py-2 text-xs sm:text-sm font-medium tracking-[0.14em] border rounded transition-all duration-300 ${buttonClasses}`}
+            className={`px-[25px] py-[12px] text-xs font-normal tracking-[0.15em] uppercase rounded-[5px] transition-all duration-400 ${buttonClasses}`}
           >
-            APPLY NOW
+            Apply Now
           </Link>
         </div>
       </nav>

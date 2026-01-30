@@ -9,6 +9,9 @@ const nextConfig = {
     domains: [],
     formats: ['image/avif', 'image/webp'],
   },
+  turbopack: {
+    root: __dirname,
+  },
 }
 
 module.exports = nextConfig

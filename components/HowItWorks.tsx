@@ -3,49 +3,45 @@
 const options = [
   {
     id: 1,
-    title: 'Full acquisition',
     description: 'We take over operations with our team of experienced founders.',
     badge: 'OPTION 1: FULL ACQUISITION',
+    borderColor: '#91a1df', // purple
   },
   {
     id: 2,
-    title: 'Partnership',
     description: 'We join as operating partners and work alongside you and your team.',
     badge: 'OPTION 2: PARTNERSHIP',
+    borderColor: '#68b0cc', // teal (sky-blue)
   },
 ]
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-16 sm:py-20 lg:py-28 bg-white">
+    <section id="how-it-works" className="py-[60px] bg-white">
       <div className="max-w-[940px] mx-auto px-[30px] sm:px-[50px]">
-        <div className="text-center mb-10 sm:mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-[var(--font-dm-serif)] italic text-gray-900 leading-tight mb-5">
+        <div className="text-center mb-5">
+          <h2 className="text-[36px] font-[var(--font-dm-serif)] italic text-gray-900 leading-[50px] mb-5">
             How it works
           </h2>
-          <p className="text-base text-gray-500 max-w-xl mx-auto">
+          <p className="text-base text-gray-500/60 max-w-[700px] mx-auto mb-5">
             We are flexible and can do majority acquisition, but are open to founding teams staying on.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <div className="flex flex-col md:flex-row justify-center gap-[30px]">
           {options.map((option) => (
             <div
               key={option.id}
-              className="bg-white rounded-lg border border-gray-200 overflow-hidden"
+              className="bg-white rounded-[5px] shadow-[0_2px_3px_rgba(0,0,0,0.15)] max-w-[320px] mx-[15px] my-[10px] p-[30px_20px] text-center"
+              style={{ borderTop: `5px solid ${option.borderColor}` }}
             >
-              {/* Teal accent bar at top */}
-              <div className="h-1.5 bg-gradient-to-r from-[#5BBFBA] to-[#4A9DAF]" />
+              <p className="text-xs font-medium uppercase tracking-[0.08em] text-[#353640] mb-4">
+                {option.badge}
+              </p>
               
-              <div className="p-6 sm:p-8">
-                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-gray-400 mb-4">
-                  {option.badge}
-                </p>
-                
-                <p className="text-base text-gray-500 leading-relaxed">
-                  {option.description}
-                </p>
-              </div>
+              <p className="text-base text-gray-500/60 leading-relaxed">
+                {option.description}
+              </p>
             </div>
           ))}
         </div>

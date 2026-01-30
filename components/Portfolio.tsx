@@ -31,60 +31,34 @@ const portfolioItems = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-16 sm:py-20 lg:py-24 bg-white">
-      <div className="max-w-[940px] mx-auto px-[30px] sm:px-[50px]">
-        <div className="text-center mb-10 sm:mb-12">
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-gray-400 mb-2">
-            OUR PORTFOLIO
+    <section id="portfolio" className="pt-[60px] pb-[60px] bg-white">
+      <div className="max-w-[900px] mx-auto px-[30px] sm:px-[50px] mb-[80px]">
+        <div className="text-center mb-[10px]">
+          <p className="text-xs font-medium uppercase tracking-[0.08em] text-gray-500/60">
+            Our portfolio
           </p>
         </div>
         
-        {/* Top row - 3 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-10 mb-10">
-          {portfolioItems.slice(0, 3).map((item) => (
-            <div key={item.id} className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center overflow-hidden">
-                <Image
-                  src={item.logo}
-                  alt={item.name}
-                  width={48}
-                  height={48}
-                  className="w-10 h-10 object-contain"
-                />
-              </div>
-              <div>
-                <h3 className="text-base font-medium text-gray-700 mb-1">
+        <div className="flex flex-wrap justify-between items-center opacity-70 mt-[10px]">
+          {portfolioItems.map((item) => (
+            <div key={item.id} className="flex items-center min-w-[250px] mb-5">
+              <Image
+                src={item.logo}
+                alt={item.name}
+                width={50}
+                height={50}
+                className="w-[50px] h-[50px] object-contain grayscale"
+              />
+              <div className="ml-5">
+                <p className="text-[20px] font-normal text-gray-900 leading-[34px] mb-0">
                   {item.name}
-                </h3>
-                <p className="text-sm text-gray-400">
+                </p>
+                <p className="text-base text-gray-500/60">
                   {item.description}
                 </p>
               </div>
             </div>
           ))}
-        </div>
-        
-        {/* Bottom row - 1 item, left aligned to match original */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-8">
-          <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center overflow-hidden">
-              <Image
-                src={portfolioItems[3].logo}
-                alt={portfolioItems[3].name}
-                width={48}
-                height={48}
-                className="w-10 h-10 object-contain"
-              />
-            </div>
-            <div>
-              <h3 className="text-base font-medium text-gray-700 mb-1">
-                {portfolioItems[3].name}
-              </h3>
-              <p className="text-sm text-gray-400">
-                {portfolioItems[3].description}
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
