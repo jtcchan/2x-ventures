@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#424448] text-white text-center text-[13px] pt-0 pb-[30px]">
+    <footer className="bg-[#424448] text-white text-center text-[13px] mt-[60px] pt-0 pb-[30px]">
       <div className="max-w-[940px] mx-auto">
         <div className="flex flex-col md:flex-row justify-around text-left mt-[60px] mb-[20px]">
           {/* Logo */}
