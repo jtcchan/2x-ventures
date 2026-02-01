@@ -6,8 +6,8 @@ import Image from 'next/image'
 export default function Footer() {
   return (
     <footer className="bg-[#424448] text-white text-center text-[13px] mt-[60px] pt-0 pb-[30px]">
-      <div className="max-w-[940px] mx-auto">
-        <div className="flex flex-col md:flex-row justify-around text-left mt-[60px] mb-[20px]">
+      <div className="max-w-[1120px] w-full mx-auto px-6">
+        <div className="flex flex-col md:flex-row justify-between text-left mt-[60px] mb-[20px] gap-[32px] md:gap-[48px]">
           {/* Logo */}
           <Link href="/" className="flex-none min-w-[60px] max-h-[60px]">
             <Image
