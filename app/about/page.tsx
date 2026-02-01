@@ -9,28 +9,19 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-white pt-28 sm:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-[var(--font-dm-serif)] italic text-gray-900 leading-tight">
-            About Us
-          </h1>
-        </div>
-      </section>
-
       {/* Our Story Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
+      <section className="pt-28 sm:pt-32 pb-12 sm:pb-16 lg:pb-20 bg-white px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[940px] mx-auto">
           <div className="text-center mb-8 sm:mb-10">
-            <p className="text-xs font-medium uppercase tracking-[0.25em] text-gray-400 mb-4">
+            <p className="text-xs font-medium uppercase tracking-[0.25em] text-[#9a9a9a] mb-4">
               OUR STORY
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-[var(--font-dm-serif)] italic text-gray-900 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-[var(--font-dm-serif)] italic text-[#1a1b1f] leading-tight">
               Skin in the game
             </h2>
           </div>
           
-          <div className="space-y-6 text-base sm:text-lg text-gray-500 leading-relaxed">
+          <div className="space-y-6 text-base sm:text-lg text-[#5d5d5d] leading-relaxed max-w-[680px] mx-auto">
             <p>
               We started 2x Ventures as a way overcome the limits of a traditional agency model—where conversations often started from scope and retainers, rather than growth and mutual profitability. As founders and operators at heart, we've always been more comfortable getting our hands dirty and improving all aspects of a client's operations.
             </p>

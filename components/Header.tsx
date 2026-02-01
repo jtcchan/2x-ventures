@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <header className={headerClasses}>
-      <nav className="px-[20px] sm:px-[50px] py-[20px] pb-[10px] flex items-center justify-between">
+      <nav className="max-w-[940px] mx-auto px-[20px] sm:px-[50px] py-[20px] pb-[10px] flex items-center justify-between">
         <Link href="/" className="h-[60px] flex items-center hover:opacity-80 transition-opacity duration-300">
           <Image
             src={isHomepage ? "/2x-logo-white.png" : "/2x-logo-alt.png"}

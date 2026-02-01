@@ -6,7 +6,7 @@ import Image from 'next/image'
 export default function Footer() {
   return (
     <footer className="bg-[#424448] text-white text-center text-[13px] mt-[60px] pt-[60px] pb-[50px]">
-      <div className="max-w-[1120px] w-full mx-auto px-6">
+      <div className="max-w-[940px] w-full mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between text-left mb-[40px] gap-[32px] md:gap-[48px]">
           {/* Logo */}
           <Link href="/" className="flex-none min-w-[60px] max-h-[60px]">
@@ -59,7 +59,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h2 className="text-white uppercase text-[16px] font-medium leading-[28px] mt-0 mb-5">
-              <strong className="text-[14px] font-medium">Get in touch</strong>
+              Get in touch
             </h2>
             <ul className="list-none p-0">
               <li>
