@@ -75,7 +75,7 @@ export default function Footer() {
         </div>
 
         <div className="text-white font-normal">
-          © 2022 2x Ventures Ltd. All rights reserved.
+          © 2026 2x Ventures Ltd. All rights reserved.
         </div>
       </div>
     </footer>
