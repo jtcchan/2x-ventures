@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Hero() {
   return (
     <section 
-      className="relative min-h-[580px] flex flex-col justify-center overflow-hidden px-5 sm:px-6 lg:px-8 pt-[100px] pb-[40px] text-white" 
+      className="relative min-h-[620px] flex flex-col justify-center overflow-hidden px-5 sm:px-6 lg:px-8 pt-[80px] pb-[120px] text-white" 
       style={{ 
         background: 'linear-gradient(150deg, #91a1df, #68b0cc 50%, #68b0cc 65%, #4d7fe8)', 
         backgroundImage: 'url("/backdrop.png"), linear-gradient(150deg, #91a1df, #68b0cc 50%, #68b0cc 65%, #4d7fe8)', 
