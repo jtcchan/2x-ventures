@@ -66,7 +66,7 @@ export default function ApplyForm() {
 
       {/* Full Name */}
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="name" className="block text-xs font-medium uppercase tracking-wide text-gray-700 mb-2">
           Full Name
         </label>
         <input
@@ -82,7 +82,7 @@ export default function ApplyForm() {
 
       {/* Email Address */}
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="email" className="block text-xs font-medium uppercase tracking-wide text-gray-700 mb-2">
           Email Address
         </label>
         <input
@@ -97,10 +97,10 @@ export default function ApplyForm() {
 
       {/* Investment Preference */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-3">
+        <label className="block text-xs font-medium uppercase tracking-wide text-gray-700 mb-3">
           Investment Preference
         </label>
-        <div className="flex flex-wrap gap-4 sm:gap-6">
+        <div className="flex flex-col gap-2">
           <label className="flex items-center gap-2 cursor-pointer">
             <input
               type="radio"
@@ -109,7 +109,7 @@ export default function ApplyForm() {
               defaultChecked
               className="w-4 h-4 text-[#5BBFBA] border-gray-300 focus:ring-[#5BBFBA]"
             />
-            <span className="text-sm text-gray-600">No Preference</span>
+            <span className="text-sm uppercase text-gray-600">No Preference</span>
           </label>
           <label className="flex items-center gap-2 cursor-pointer">
             <input
@@ -118,7 +118,7 @@ export default function ApplyForm() {
               value="debt"
               className="w-4 h-4 text-[#5BBFBA] border-gray-300 focus:ring-[#5BBFBA]"
             />
-            <span className="text-sm text-gray-600">Debt</span>
+            <span className="text-sm uppercase text-gray-600">Debt</span>
           </label>
           <label className="flex items-center gap-2 cursor-pointer">
             <input
@@ -127,14 +127,14 @@ export default function ApplyForm() {
               value="equity"
               className="w-4 h-4 text-[#5BBFBA] border-gray-300 focus:ring-[#5BBFBA]"
             />
-            <span className="text-sm text-gray-600">Equity</span>
+            <span className="text-sm uppercase text-gray-600">Equity</span>
           </label>
         </div>
       </div>
 
       {/* Minimum Investment */}
       <div>
-        <label htmlFor="min-investment" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="min-investment" className="block text-xs font-medium uppercase tracking-wide text-gray-700 mb-2">
           Minimum Investment
         </label>
         <input
@@ -149,7 +149,7 @@ export default function ApplyForm() {
 
       {/* Maximum Investment */}
       <div>
-        <label htmlFor="max-investment" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="max-investment" className="block text-xs font-medium uppercase tracking-wide text-gray-700 mb-2">
           Maximum Investment
         </label>
         <input
@@ -164,7 +164,7 @@ export default function ApplyForm() {
 
       {/* Investment Experience */}
       <div>
-        <label htmlFor="experience" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="experience" className="block text-xs font-medium uppercase tracking-wide text-gray-700 mb-2">
           Investment Experience
         </label>
         <textarea
