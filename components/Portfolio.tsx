@@ -39,26 +39,48 @@ export default function Portfolio() {
           </p>
         </div>
         
-        <div className="flex flex-wrap justify-between items-center opacity-70 mt-[10px]">
-          {portfolioItems.map((item) => (
-            <div key={item.id} className="flex items-center min-w-[250px] mb-5">
-              <Image
-                src={item.logo}
-                alt={item.name}
-                width={50}
-                height={50}
-                className="w-[50px] h-[50px] object-contain grayscale"
-              />
-              <div className="ml-5">
-                <p className="text-[20px] font-normal text-gray-900 leading-[34px] mb-0">
-                  {item.name}
-                </p>
-                <p className="text-base text-gray-500/60">
-                  {item.description}
-                </p>
+        {/* 3+1 layout: 3 items in top row, Dayboard below left-aligned */}
+        <div className="opacity-70 mt-[10px]">
+          {/* Top row: 3 items */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-[20px] gap-y-[20px] mb-[20px]">
+            {portfolioItems.slice(0, 3).map((item) => (
+              <div key={item.id} className="flex items-center">
+                <Image
+                  src={item.logo}
+                  alt={item.name}
+                  width={50}
+                  height={50}
+                  className="w-[50px] h-[50px] object-contain grayscale flex-shrink-0"
+                />
+                <div className="ml-5">
+                  <p className="text-[20px] font-normal text-gray-900 leading-[34px] mb-0">
+                    {item.name}
+                  </p>
+                  <p className="text-base text-gray-500/60">
+                    {item.description}
+                  </p>
+                </div>
               </div>
+            ))}
+          </div>
+          {/* Bottom row: Dayboard only, left-aligned */}
+          <div className="flex items-center">
+            <Image
+              src={portfolioItems[3].logo}
+              alt={portfolioItems[3].name}
+              width={50}
+              height={50}
+              className="w-[50px] h-[50px] object-contain grayscale flex-shrink-0"
+            />
+            <div className="ml-5">
+              <p className="text-[20px] font-normal text-gray-900 leading-[34px] mb-0">
+                {portfolioItems[3].name}
+              </p>
+              <p className="text-base text-gray-500/60">
+                {portfolioItems[3].description}
+              </p>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
