@@ -31,7 +31,7 @@ export default function SubmissionSuccessfulPage() {
             </div>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-[var(--font-dm-serif)] italic text-gray-900 leading-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-[var(--font-dm-serif)] text-gray-900 leading-tight mb-6">
             Thanks for applying!
           </h1>
           

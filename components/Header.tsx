@@ -26,12 +26,22 @@ export default function Header() {
     <header className={headerClasses}>
       <nav className="max-w-[940px] mx-auto px-[20px] sm:px-[50px] py-[20px] pb-[10px] flex items-center justify-between">
         <Link href="/" className="h-[60px] flex items-center hover:opacity-80 transition-opacity duration-300">
+          {/* Mobile (≤767px): always show dark/colored logo */}
+          <Image
+            src="/2x-logo-alt.png"
+            alt="2x Micro Ventures"
+            width={180}
+            height={60}
+            className="md:hidden h-full w-auto object-contain object-left"
+            priority
+          />
+          {/* Desktop (≥768px): white logo on homepage, dark logo on other pages */}
           <Image
             src={isHomepage ? "/2x-logo-white.png" : "/2x-logo-alt.png"}
             alt="2x Micro Ventures"
             width={180}
             height={60}
-            className="h-full w-auto object-contain object-left"
+            className="hidden md:block h-full w-auto object-contain object-left"
             priority
           />
         </Link>

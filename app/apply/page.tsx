@@ -11,7 +11,7 @@ export default function ApplyPage() {
     <section className="bg-white min-h-screen pt-28 sm:pt-32 pb-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-xl mx-auto">
         <div className="mb-10 sm:mb-12">
-          <h1 className="text-3xl sm:text-4xl font-[var(--font-dm-serif)] italic text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl font-[var(--font-dm-serif)] text-gray-900 mb-4">
             Investment Application
           </h1>
           <p className="text-base text-gray-500 leading-relaxed">
