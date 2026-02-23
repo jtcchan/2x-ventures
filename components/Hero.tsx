@@ -12,7 +12,7 @@ export default function Hero() {
         backgroundSize: 'contain, auto' 
       }}
     >
-      <div className="w-[70%] max-w-[1140px] mx-auto text-center">
+      <div className="w-[90%] sm:w-[80%] md:w-[70%] max-w-[1140px] mx-auto text-center">
         <p className="text-xs tracking-[0.08em] uppercase font-medium text-white/80 mb-[10px] max-w-[240px] mx-auto sm:max-w-none">
           Micro PRIVATE EQUITY for DTC eCommerce and SaaS
         </p>

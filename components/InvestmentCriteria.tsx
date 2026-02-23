@@ -12,7 +12,7 @@ export default function InvestmentCriteria() {
   return (
     <section id="criteria" className="pt-0 pb-0">
       <div className="max-w-[940px] mx-auto px-[30px] sm:px-[50px]">
-        <div className="bg-[#F6F7FA] rounded-[10px] py-[60px] px-[40px]">
+        <div className="bg-[#F6F7FA] rounded-[10px] py-[60px] px-[20px] sm:px-[40px]">
           <div className="text-center mb-0">
             <p className="text-xs font-medium uppercase tracking-[0.08em] text-gray-500/60 mb-[10px]">
               Our Criteria

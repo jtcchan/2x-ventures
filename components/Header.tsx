@@ -49,7 +49,7 @@ export default function Header() {
         <div className="flex items-center gap-[16px]">
           <Link
             href="/about"
-            className={`hidden sm:block text-xs font-medium tracking-[0.08em] uppercase py-[9px] transition-opacity duration-200 ${textClasses}`}
+            className={`text-xs font-medium tracking-[0.08em] uppercase py-[9px] transition-opacity duration-200 ${textClasses}`}
           >
             About Us
           </Link>
