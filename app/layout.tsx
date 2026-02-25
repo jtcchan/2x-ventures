@@ -1,15 +1,9 @@
 import type { Metadata } from 'next'
-import { Montserrat, DM_Serif_Display, DM_Sans } from 'next/font/google'
+import { DM_Serif_Display, DM_Sans } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-
-const montserrat = Montserrat({ 
-  subsets: ['latin'],
-  variable: '--font-montserrat',
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-})
 
 const dmSerif = DM_Serif_Display({
   subsets: ['latin'],
@@ -45,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${dmSerif.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${dmSerif.variable} ${dmSans.variable}`}>
       <head>
         {/* Google Tag Manager */}
         <Script id="gtm" strategy="afterInteractive">

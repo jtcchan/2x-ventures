@@ -36,7 +36,7 @@ export default function SubmissionSuccessfulPage() {
           </h1>
           
           <p className="text-base sm:text-lg text-gray-500 leading-relaxed mb-10">
-            We've received your information and will get back to you within 2-5 business days. We look forward to speaking with you soon.
+            We&apos;ve received your information and will get back to you within 2-5 business days. We look forward to speaking with you soon.
           </p>
           
           <Link

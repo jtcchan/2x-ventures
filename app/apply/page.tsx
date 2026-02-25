@@ -15,7 +15,7 @@ export default function ApplyPage() {
             Investment Application
           </h1>
           <p className="text-base text-gray-500 leading-relaxed">
-            We would love to hear from you if you'd like to invest and see your portfolio grow.
+            We would love to hear from you if you&apos;d like to invest and see your portfolio grow.
           </p>
         </div>
         

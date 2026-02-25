@@ -2,7 +2,6 @@
 @import "tailwindcss";
 
 @theme {
-  --font-montserrat: var(--font-montserrat);
   --font-dm-serif: var(--font-dm-serif);
   --font-dm-sans: var(--font-dm-sans);
 
