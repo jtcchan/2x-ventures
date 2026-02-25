@@ -56,7 +56,7 @@ export default function RootLayout({
           })(window,document,'script','dataLayer','GTM-WGV4CD5R');`}
         </Script>
       </head>
-      <body className={`${montserrat.className} antialiased`}>
+      <body className={`${dmSans.className} antialiased`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
