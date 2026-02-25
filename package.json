@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "test": "node --test",
-    "lint": "eslint"
+    "lint": "eslint",
+    "qa:screenshots": "bash scripts/verify-screenshots.sh"
   },
   "dependencies": {
     "next": "16.1.6",
