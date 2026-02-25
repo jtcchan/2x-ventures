@@ -32,7 +32,7 @@ const portfolioItems = [
 export default function Portfolio() {
   return (
     <section id="portfolio" className="pt-[60px] pb-[60px] bg-white">
-      <div className="max-w-[900px] mx-auto px-[30px] sm:px-[50px] mb-[80px]">
+      <div className="max-w-[940px] mx-auto px-[30px] sm:px-[50px] mb-[80px]">
         <div className="text-center mb-[10px]">
           <p className="text-xs font-medium uppercase tracking-[0.08em] text-gray-500/60">
             Our portfolio
