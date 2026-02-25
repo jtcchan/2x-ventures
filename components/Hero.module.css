@@ -1,33 +1,26 @@
 .hero {
   background:
-    url('/backdrop.png') no-repeat 50% 100% / min(1300px, 100%) auto,
+    url('/backdrop.png') no-repeat 50% 100% / 100% auto,
     linear-gradient(150deg, #91a1df, #68b0cc 50%, #68b0cc 65%, #4d7fe8);
-}
-
-@media (max-width: 1440px) {
-  .hero {
-    background-position: 50% 100%, 0 0;
-    background-size: min(1200px, 100%) auto, auto;
-  }
 }
 
 @media (max-width: 1024px) {
   .hero {
     background-position: 50% 100%, 0 0;
-    background-size: min(1000px, 130%) auto, auto;
+    background-size: 130% auto, auto;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
     background-position: 50% 100%, 0 0;
-    background-size: min(900px, 170%) auto, auto;
+    background-size: 170% auto, auto;
   }
 }
 
 @media (max-width: 390px) {
   .hero {
     background-position: 50% 100%, 0 0;
-    background-size: min(760px, 210%) auto, auto;
+    background-size: 210% auto, auto;
   }
 }
