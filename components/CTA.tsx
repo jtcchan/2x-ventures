@@ -11,7 +11,7 @@ export default function CTA() {
             Next Steps
           </p>
           
-          <h2 className="text-[36px] font-[var(--font-dm-serif)] italic text-gray-900 leading-[50px] mb-5">
+          <h2 className="text-[36px] font-[var(--font-dm-serif)] text-gray-900 leading-[50px] mb-5">
             Interested to learn more?
           </h2>
           

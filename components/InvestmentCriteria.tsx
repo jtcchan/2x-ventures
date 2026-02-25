@@ -17,11 +17,11 @@ export default function InvestmentCriteria() {
             <p className="text-xs font-medium uppercase tracking-[0.08em] text-gray-500/60 mb-[10px]">
               Our Criteria
             </p>
-            <h2 className="text-[36px] font-[var(--font-dm-serif)] italic text-gray-900 leading-[50px] mb-5">
+            <h2 className="text-[36px] font-[var(--font-dm-serif)] text-gray-900 leading-[50px] mb-5">
               Finding a good fit
             </h2>
             <p className="text-base text-gray-500/60 max-w-[700px] mx-auto mb-0">
-              We've found companies with the following qualities typically find the best fit with our team:
+              We&rsquo;ve found companies with the following qualities typically find the best fit with our team:
             </p>
           </div>
           

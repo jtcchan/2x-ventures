@@ -8,7 +8,7 @@ export default function InvestmentFocus() {
           <p className="text-xs font-medium uppercase tracking-[0.08em] text-gray-500/60 mb-[10px]">
             Our investment focus
           </p>
-          <h2 className="text-[36px] font-[var(--font-dm-serif)] italic text-gray-900 leading-[50px] mb-5">
+          <h2 className="text-[36px] font-[var(--font-dm-serif)] text-gray-900 leading-[50px] mb-5">
             Helping brands thrive with talent and expertise
           </h2>
         </div>

@@ -20,7 +20,7 @@ export default function HowItWorks() {
     <section id="how-it-works" className="py-[60px] bg-white">
       <div className="max-w-[940px] mx-auto px-[30px] sm:px-[50px]">
         <div className="text-center mb-5">
-          <h2 className="text-[36px] font-[var(--font-dm-serif)] italic text-gray-900 leading-[50px] mb-5">
+          <h2 className="text-[36px] font-[var(--font-dm-serif)] text-gray-900 leading-[50px] mb-5">
             How it works
           </h2>
           <p className="text-base text-gray-500/60 max-w-[700px] mx-auto mb-5">

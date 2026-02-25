@@ -16,18 +16,18 @@ export default function AboutPage() {
             <p className="text-xs font-medium uppercase tracking-[0.25em] text-[#9a9a9a] mb-4">
               OUR STORY
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-[var(--font-dm-serif)] italic text-[#1a1b1f] leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-[var(--font-dm-serif)] text-[#1a1b1f] leading-tight">
               Skin in the game
             </h2>
           </div>
           
           <div className="space-y-6 text-base sm:text-lg text-[#5d5d5d] leading-relaxed max-w-[680px] mx-auto">
             <p>
-              We started 2x Ventures as a way overcome the limits of a traditional agency model—where conversations often started from scope and retainers, rather than growth and mutual profitability. As founders and operators at heart, we've always been more comfortable getting our hands dirty and improving all aspects of a client's operations.
+              We started 2x Ventures as a way overcome the limits of a traditional agency model—where conversations often started from scope and retainers, rather than growth and mutual profitability. As founders and operators at heart, we&rsquo;ve always been more comfortable getting our hands dirty and improving all aspects of a client&rsquo;s operations.
             </p>
             
             <p>
-              More importantly, we loved helping founders. We've seen firsthand how many have poured their hearts into following their businesses. And we wanted a way to share our skills, commitments, and resources fully and be true partners in the business, rather than turning them away.
+              More importantly, we loved helping founders. We&rsquo;ve seen firsthand how many have poured their hearts into following their businesses. And we wanted a way to share our skills, commitments, and resources fully and be true partners in the business, rather than turning them away.
             </p>
             
             <p>
@@ -45,7 +45,7 @@ export default function AboutPage() {
               NEXT STEPS
             </p>
             
-            <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-[var(--font-dm-serif)] italic text-gray-900 leading-tight mb-8 sm:mb-10">
+            <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-[var(--font-dm-serif)] text-gray-900 leading-tight mb-8 sm:mb-10">
               Interested to learn more?
             </h2>
             
