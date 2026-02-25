@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+
 export default function ApplyForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')
@@ -14,32 +15,19 @@ export default function ApplyForm() {
 
     try {
       const formData = new FormData(e.currentTarget)
-      const company = String(formData.get('company') || '')
-      const payload = {
-        name: formData.get('name') || '',
-        email: formData.get('email') || '',
-        investmentPreference: formData.get('investment-preference') || '',
-        minInvestment: formData.get('min-investment') || '',
-        maxInvestment: formData.get('max-investment') || '',
-        experience: formData.get('experience') || '',
-        company,
-      }
-
-      const response = await fetch('/api/apply', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+      const encoded = new URLSearchParams()
+      formData.forEach((value, key) => {
+        encoded.append(key, String(value))
       })
 
-      let result: { success?: boolean; error?: string } | null = null
-      try {
-        result = await response.json()
-      } catch {
-        result = null
-      }
+      const response = await fetch('/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encoded.toString(),
+      })
 
-      if (!response.ok || !result?.success) {
-        throw new Error(result?.error || 'Submission failed')
+      if (!response.ok) {
+        throw new Error('Submission failed')
       }
 
       router.push('/submission-successful')
@@ -51,17 +39,20 @@ export default function ApplyForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      {/* Honeypot field */}
+    <form
+      name="apply"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      onSubmit={handleSubmit}
+      className="space-y-6"
+    >
+      {/* Netlify required hidden field */}
+      <input type="hidden" name="form-name" value="apply" />
+
+      {/* Honeypot field for spam protection */}
       <div className="absolute left-[-10000px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
-        <label htmlFor="company">Company</label>
-        <input
-          type="text"
-          id="company"
-          name="company"
-          tabIndex={-1}
-          autoComplete="off"
-        />
+        <label>Don&apos;t fill this out: <input name="bot-field" /></label>
       </div>
 
       {/* Full Name */}
